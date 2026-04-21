@@ -51,3 +51,12 @@ edu_admin_integrated_system_pwa_v6_2/
 ## 캐시 주의
 
 브라우저 캐시 때문에 이전 버전이 보이면 강력 새로고침을 하거나 개발자도구 Application 탭에서 기존 Service Worker와 Cache Storage를 삭제하세요.
+
+## v6.2.2 문서 서식 패치
+
+- 문서 템플릿에 `공문 본문(케이에듀파인용)`을 추가했습니다.
+- 기존 계획서/회의록/결과보고서는 `붙임 계획서`, `붙임 회의록`, `붙임 결과보고서`로 표시합니다.
+- CSS에서 케이에듀파인 본문형과 A4 첨부문서형을 분리했습니다.
+- 초기 로그인은 `admin / 1234`입니다.
+
+교체 파일: `index.html`, `js/app.js`, `css/style.css`, `sw.js`

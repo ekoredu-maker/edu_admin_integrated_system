@@ -1,4 +1,4 @@
-/* 교육행정업무 통합 관리 시스템 v6.2 PWA */
+/* 교육행정업무 통합 관리 시스템 v6.2.3 PWA - 공문/붙임 기본계획서 서식 */
 :root{--bg:#f4f7fb;--card:#fff;--line:#d9e2ec;--text:#1f2d3d;--muted:#66758b;--pri:#1f5fa8;--pri2:#123b72;--ok:#19784c;--warn:#b2730d;--bad:#b2382f;--soft:#eef4fb;--shadow:0 10px 28px rgba(15,23,42,.08)}
 *{box-sizing:border-box} html,body{margin:0;padding:0;font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif;color:var(--text);background:var(--bg)}
 button,input,select,textarea{font:inherit} button{cursor:pointer;border:1px solid transparent;border-radius:12px;padding:10px 14px} button:disabled{opacity:.55;cursor:not-allowed}
@@ -44,3 +44,74 @@ table{width:100%;border-collapse:collapse} th,td{border-bottom:1px solid #e8eef5
 @media(max-width:1180px){.grid4,.alerts,.grid2,.split{grid-template-columns:1fr}.form{grid-template-columns:1fr}header{grid-template-columns:1fr}}
 @media(max-width:920px){.app{grid-template-columns:76px 1fr}.nav button span,.nav button small,aside h3,.sidebox{display:none}.nav button{text-align:center;padding:12px}}
 @media print{body *{visibility:hidden}#docPaper,#docPaper *{visibility:visible}#docPaper{position:absolute;left:0;top:0;width:100%;box-shadow:none}}
+
+/* === v6.2.2 문서 출력 서식: 케이에듀파인 공문 본문 / 붙임 계획서 === */
+.paper{max-width:860px;padding:28px 30px;background:#fff;color:#111;word-break:keep-all;overflow-wrap:break-word}
+.paper .doc-root{color:#111;letter-spacing:0;word-break:keep-all;overflow-wrap:break-word}
+.paper .doc-para,.paper .doc-list-item{white-space:pre-wrap;margin:0 0 7px}
+.paper .doc-list{margin:0 0 10px}
+.paper .doc-meta{text-align:right;margin:0 0 9px;color:#333}
+.paper .doc-sign{text-align:right;white-space:pre-wrap;margin-top:30px}
+.paper .doc-table{width:100%;border-collapse:collapse;table-layout:fixed;margin:8px 0 14px}
+.paper .doc-table td{border:1px solid #333;padding:5px 7px;vertical-align:top;line-height:1.35}
+.paper .doc-table .doc-th{font-weight:700;background:#f3f3f3;text-align:center}
+
+/* 케이에듀파인 본문 붙여넣기용: 제목 과장 금지, 맑은 고딕, 11~12pt, 짧은 줄간격 */
+.paper .doc-official{font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif;font-size:11.5pt;line-height:1.42}
+.paper .doc-official .doc-title{font-size:13pt;font-weight:700;text-align:left;margin:0 0 12px}
+.paper .doc-official .doc-section{font-size:11.5pt;font-weight:400;margin:10px 0 6px}
+.paper .doc-official .doc-para{margin:0 0 8px}
+.paper .doc-official .doc-list{margin:0 0 10px 18px}
+.paper .doc-official .doc-list-item{margin:0 0 5px;text-indent:-18px;padding-left:18px}
+.paper .doc-official .doc-table{font-size:10.5pt;margin:6px 0 10px}
+.paper .doc-official .doc-table td{padding:4px 6px}
+
+/* 붙임 계획서/회의록/결과보고서: A4 첨부문서형, 바탕/명조 계열, 제목과 장 제목 강조 */
+.paper .doc-attachment{font-family:"Batang","HCR Batang","Noto Serif KR",serif;font-size:14.5pt;line-height:1.55}
+.paper .doc-attachment .doc-title{font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif;font-size:21pt;font-weight:800;text-align:center;letter-spacing:-0.02em;margin:4px 0 20px}
+.paper .doc-attachment .doc-section{font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif;font-size:15.5pt;font-weight:800;margin:17px 0 8px;letter-spacing:-0.02em}
+.paper .doc-attachment .doc-para{margin:0 0 10px}
+.paper .doc-attachment .doc-list{margin:0 0 12px 0}
+.paper .doc-attachment .doc-list-item{margin:0 0 6px}
+.paper .doc-attachment .doc-meta{font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif;font-size:9.5pt;line-height:1.3}
+.paper .doc-attachment .doc-table{font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif;font-size:10.5pt;line-height:1.32;margin:7px 0 15px}
+.paper .doc-attachment .doc-table td{padding:5px 7px}
+.paper .doc-attachment .doc-sign{font-size:13.5pt;line-height:1.6;margin-top:34px}
+
+@page{size:A4 portrait;margin:15mm 20mm}
+@media print{
+  body{background:#fff!important}
+  body *{visibility:hidden!important}
+  #docPaper,#docPaper *{visibility:visible!important}
+  #docPaper{position:absolute!important;left:0!important;top:0!important;width:100%!important;max-width:none!important;min-height:auto!important;margin:0!important;padding:0!important;box-shadow:none!important;border-radius:0!important;background:#fff!important}
+  #docPaper .doc-root{page-break-inside:auto}
+  #docPaper .doc-table tr{break-inside:avoid;page-break-inside:avoid}
+  #docPaper .doc-section{break-after:avoid;page-break-after:avoid}
+}
+
+/* === v6.2.3 붙임 기본계획서 구성: 표지 + 기본 목차형 계획서 === */
+.paper .doc-attachment .doc-cover{
+  min-height:245mm;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  text-align:center;
+  padding:34mm 8mm 22mm;
+  break-after:page;
+  page-break-after:always;
+  font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+}
+.paper .doc-cover-tagline{font-size:13pt;font-weight:700;color:#1f2d3d;margin-bottom:18mm}
+.paper .doc-cover-main{display:flex;flex-direction:column;align-items:center;gap:16mm}
+.paper .doc-cover-title{font-size:24pt;font-weight:800;line-height:1.35;letter-spacing:-0.04em;word-break:keep-all}
+.paper .doc-cover-date{font-size:15pt;font-weight:700}
+.paper .doc-cover-dept{font-size:14pt;font-weight:800}
+.paper .doc-attachment .doc-org{font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif;text-align:center;font-size:13pt;font-weight:700;margin:-10px 0 22px}
+.paper .doc-attachment .doc-section{border-bottom:2px solid #d8e1ee;padding-bottom:5px;margin-top:20px}
+.paper .doc-attachment .doc-list-item{padding-left:1.1em;text-indent:-1.1em}
+.paper .doc-attachment .doc-table .doc-th{background:#eef3fb}
+@media print{
+  #docPaper .doc-cover{min-height:267mm!important;padding-top:38mm!important;padding-bottom:24mm!important}
+  #docPaper .doc-cover{break-after:page!important;page-break-after:always!important}
+}

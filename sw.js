@@ -1,4 +1,4 @@
-const CACHE_NAME = 'edu-admin-integrated-v6-2-pwa';
+const CACHE_NAME = 'edu-admin-integrated-v6-2-3-planform';
 const APP_SHELL = [
   './',
   './index.html',
