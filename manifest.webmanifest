@@ -1,6 +1,6 @@
 {
-  "name": "교육행정업무 통합 관리 시스템 v6.2.4",
-  "short_name": "교육행정업무 v6.2.4",
+  "name": "교육행정업무 통합 관리 시스템 v6.2.5",
+  "short_name": "교육행정업무 v6.2.5",
   "description": "공문 본문과 붙임 계획서 자동 생성 서식을 포함한 오프라인 대응 PWA",
   "lang": "ko-KR",
   "start_url": "./index.html",

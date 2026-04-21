@@ -1,4 +1,4 @@
-const CACHE_NAME = 'edu-admin-integrated-v6-2-4-attachment';
+const CACHE_NAME = 'edu-admin-integrated-v6-2-5-admin-policy';
 const APP_SHELL = [
   './',
   './index.html',

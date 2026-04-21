@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>교육행정업무 통합 관리 시스템 v6.2.4 PWA</title>
+<title>교육행정업무 통합 관리 시스템 v6.2.5 PWA</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <meta name="theme-color" content="#1f5fa8">
 <link rel="icon" href="./assets/icons/icon-192.png">
@@ -29,7 +29,7 @@
     <button data-page="flow">🗂️<span> 결재·이력 관리</span><small>다단계 결재 · 휴지통 · 활동로그</small></button>
     <button data-page="ops">🛠️<span> 운영센터</span><small>권한 · 템플릿 · 보안 · 백업</small></button>
   </div>
-  <div class="sidebox"><strong>운영 단계 v6.2.4 PWA</strong><br>CSS·JS·Assets·PWA 구조에 겉공문과 붙임 계획서 별도 생성 기능을 반영한 버전입니다.</div>
+  <div class="sidebox"><strong>운영 단계 v6.2.5 PWA</strong><br>CSS·JS·Assets·PWA 구조에 겉공문과 붙임 계획서 별도 생성 기능을 반영한 버전입니다.</div>
   <div class="sidebox"><strong>시범 계정</strong><br><span style="font-family:Consolas,monospace">ID: admin</span><br><span style="font-family:Consolas,monospace">PW: 1234</span></div>
 </aside>
 <main>
@@ -71,7 +71,10 @@
         <div class="full"><label>분류 태그</label><input id="fTags"></div>
         <div><label>추진 근거</label><textarea id="fBasis"></textarea></div>
         <div><label>목적</label><textarea id="fPurpose"></textarea></div>
-        <div class="full"><label>방침</label><textarea id="fPolicy"></textarea></div>
+        <div class="full"><label>방침 <span class="muted">(붙임 계획서용: 사업 운영 가이드라인)</span></label><textarea id="fPolicy" placeholder="예: 현장 여건 반영, 대상별 맞춤형 운영, 예산 집행 기준 준수 등"></textarea></div>
+        <div class="full"><label>행정사항 <span class="muted">(겉공문용: 기관·학교에 안내할 지시·협조사항)</span></label><textarea id="fAdminItems" placeholder="예: 대상 학교는 기한 내 신청서를 제출
+예산 집행 후 증빙자료 제출
+결과보고서 제출 기한 준수"></textarea></div>
         <div class="full"><label>추진 배경 <span class="muted">(붙임 계획서용)</span></label><textarea id="fBackground" placeholder="예: 정책 변화, 현장 수요, 전년도 운영 결과 등을 입력"></textarea></div>
         <div class="full"><label>실태 분석 <span class="muted">(붙임 계획서용)</span></label><textarea id="fAnalysis" placeholder="예: 현황, 문제점, 개선 방향을 줄 단위로 입력"></textarea></div>
         <div class="full"><label>세부 추진 내용 <span class="muted">(붙임 계획서용)</span></label><textarea id="fDetailPlan" placeholder="예: 추진 과제별 세부 내용, 일정, 대상 등을 줄 단위로 입력"></textarea></div>

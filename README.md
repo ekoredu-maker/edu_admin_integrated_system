@@ -1,11 +1,11 @@
-# 교육행정업무 통합 관리 시스템 v6.2.4 PWA
+# 교육행정업무 통합 관리 시스템 v6.2.5 PWA
 
 단일 HTML 시제품을 GitHub Pages 배포에 맞게 `index.html`, `css`, `js`, `assets`, `manifest`, `sw.js` 구조로 분리한 버전입니다.
 
 ## 폴더 구조
 
 ```text
-edu_admin_integrated_system_pwa_v6_2_4_full/
+edu_admin_integrated_system_pwa_v6_2_5_full/
 ├─ index.html
 ├─ manifest.webmanifest
 ├─ sw.js
@@ -29,7 +29,7 @@ edu_admin_integrated_system_pwa_v6_2_4_full/
 
 현재 로그인은 서버 인증이 아니라 로컬 화면 잠금 방식입니다. 실제 업무 운영용으로 개인정보·민감자료를 다루려면 서버 인증, 사용자별 권한, 암호화 저장 구조가 필요합니다.
 
-## v6.2.4 주요 변경
+## v6.2.5 주요 변경
 
 - 문서 자동 생성에서 `겉공문`과 `붙임 파일`의 역할을 분리했습니다.
 - `겉공문 생성` 버튼은 케이에듀파인 본문에 붙여넣기 좋은 공문 본문을 생성합니다.
@@ -67,3 +67,13 @@ edu_admin_integrated_system_pwa_v6_2_4_full/
 ## 캐시 주의
 
 브라우저 캐시 때문에 이전 버전이 보이면 강력 새로고침을 하거나 개발자도구 Application 탭에서 기존 Service Worker와 Cache Storage를 삭제하세요.
+
+
+## v6.2.5 추가 변경
+
+- `방침`과 `행정사항`을 분리했습니다.
+- `방침`은 붙임 계획서의 사업 운영 가이드라인으로 유지됩니다.
+- `행정사항`은 겉공문 본문에 들어가는 지시·협조사항으로 출력됩니다.
+- 신규 사업 생성 화면에 `행정사항` 입력창을 추가했습니다.
+- CSV 서식과 CSV 내보내기에 `행정사항` 항목을 추가했습니다.
+- Service Worker 캐시명을 `edu-admin-integrated-v6-2-5-admin-policy`로 변경했습니다.
