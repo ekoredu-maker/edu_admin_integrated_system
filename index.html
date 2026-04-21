@@ -35,7 +35,7 @@
 <main>
   <section id="dash" class="page active">
     <div class="top"><div><h1>업무 통합 관제 대시보드</h1><p>총괄 지표, 일정, 위험 신호, 알림센터 확인</p></div><div class="toolbar"><button id="csvUpBtn" class="sec">CSV 일괄 업로드</button><button id="csvTplBtn" class="soft">CSV 서식 다운로드</button><button id="yearOutBtn" class="pri">연간 데이터 추출</button><input id="csvFile" type="file" accept=".csv" hidden></div></div>
-    <div class="card" style="margin-bottom:12px"><div class="section"><h2>필터 및 검색</h2><span id="resultMeta">총 0건</span></div><div class="filters"><select id="statusF"><option value="all">전체 상태</option><option>기획</option><option>시달</option><option>완료</option><option>보류</option></select><select id="yearF"></select><input id="deptF" placeholder="부서 필터"><button id="clearF" class="sec">필터 초기화</button><span class="muted">사업명·부서·담당자·목적·장소·태그를 통합 검색합니다.</span></div></div>
+    <div class="card" style="margin-bottom:12px"><div class="section"><h2>필터 및 검색</h2><span id="resultMeta">총 0건</span></div><div class="filters"><select id="statusF"><option value="all">전체 상태</option><option>기획</option><option>시달</option><option>완료</option><option>보류</option></select><select id="yearF"></select><input id="deptF" placeholder="부서 필터"><button id="clearF" class="sec">필터 초기화</button><span class="muted">사업명·부서·담당자·목적·장소·태그 통합 검색</span></div></div>
     <div id="kpis" class="grid4"></div>
     <div id="alerts" class="alerts"></div>
     <div class="grid2" style="margin-bottom:12px">
@@ -52,7 +52,7 @@
   <section id="create" class="page">
     <div class="top"><div><h1>신규 사업 생성</h1><p>기획·지침 수립에 필요한 마스터 데이터와 다단계 결재선 작성</p></div><div class="toolbar"><span id="editBadge" class="mini badge" style="display:none">수정 모드</span><button id="resetForm" class="sec">입력 초기화</button><button id="saveProj" class="pri">저장</button></div></div>
     <div class="card">
-      <div class="section"><h2>과거 사업 복제 및 수정</h2><span>기존 사업을 복제하거나 수정 모드로 불러옵니다.</span></div>
+      <div class="section"><h2>과거 사업 복제 및 수정</h2><span>기존 사업을 복제하거나 수정 모드로 불러옴</span></div>
       <div class="form">
         <div><label>복제 대상 사업</label><select id="cloneSel"><option value="">새로 작성</option></select></div>
         <div><label>수정 대상 사업</label><select id="editSel"><option value="">선택 안 함</option></select></div>
@@ -88,7 +88,7 @@
   </section>
 
   <section id="doc" class="page">
-    <div class="top"><div><h1>문서 자동 생성</h1><p>겉공문은 케이에듀파인 본문 복사용으로, 붙임 파일은 별도 계획서·회의록·결과보고서로 생성합니다.</p></div><div class="toolbar"><button id="makeOfficial" class="sec">겉공문 생성</button><button id="makeAttachment" class="pri">붙임 계획서 생성</button><button id="downPairRtf" class="soft">공문+붙임 각각 다운로드</button><button id="copyHtml" class="sec">에듀파인 복사용 HTML 복사</button><button id="downRtf" class="pri">현재 문서 RTF</button><button id="printBtn" class="soft">인쇄</button></div></div>
+    <div class="top"><div><h1>문서 자동 생성</h1><p>겉공문은 케이에듀파인 본문 복사용으로, 붙임 파일은 별도 계획서·회의록·결과보고서로 생성</p></div><div class="toolbar"><button id="makeOfficial" class="sec">겉공문 생성</button><button id="makeAttachment" class="pri">붙임 계획서 생성</button><button id="downPairRtf" class="soft">공문+붙임 각각 다운로드</button><button id="copyHtml" class="sec">에듀파인 복사용 HTML 복사</button><button id="downRtf" class="pri">현재 문서 RTF</button><button id="printBtn" class="soft">인쇄</button></div></div>
     <div class="split">
       <div class="card">
         <div class="section"><h2>문서 컨트롤 패널</h2><span>저장된 사업과 템플릿 선택</span></div>
@@ -105,8 +105,8 @@
           <div class="full"><label>붙임 / 비고</label><textarea id="dAttach" style="min-height:88px" placeholder="여러 줄 입력 가능&#10;예: 1. 세부 추진 일정 1부.&#10;2. 예산 산출 기초내역 1부."></textarea></div>
         </div>
         <div class="note-list" style="margin-top:12px">
-          <div class="note info"><strong>겉공문과 붙임 분리</strong>겉공문은 케이에듀파인 본문에 붙여넣는 안내문, 붙임 계획서는 표지와 세부 계획을 갖춘 별도 첨부문서로 생성합니다.</div>
-          <div class="note info"><strong>붙임 계획서 구조</strong>표지, 운영 근거, 추진 배경, 추진 목적, 실태 분석, 추진 방향, 추진 개요, 세부 추진 계획, 예산 운영 계획, 기대 효과를 자동 구성합니다.</div>
+          <div class="note info"><strong>겉공문과 붙임 분리</strong>겉공문은 케이에듀파인 본문에 붙여넣는 안내문, 붙임 계획서는 표지와 세부 계획을 갖춘 별도 첨부문서로 생성</div>
+          <div class="note info"><strong>붙임 계획서 구조</strong>표지, 운영 근거, 추진 배경, 추진 목적, 실태 분석, 추진 방향, 추진 개요, 세부 추진 계획, 예산 운영 계획, 기대 효과 자동 구성</div>
         </div>
       </div>
       <div class="card"><div class="section"><h2>라이브 프리뷰</h2><span id="previewMeta" class="mini badge">미리보기 준비 중</span></div><div class="preview"><div id="docPaper" class="paper"></div></div></div>
@@ -114,7 +114,7 @@
   </section>
 
   <section id="manage" class="page">
-    <div class="top"><div><h1>예산·결과 관리</h1><p>사업별 실집행, 집행률, 차액, 결과 요약을 입력하고 관리합니다.</p></div><div class="toolbar"><button id="saveManage" class="pri">변경 저장</button></div></div>
+    <div class="top"><div><h1>예산·결과 관리</h1><p>사업별 실집행, 집행률, 차액, 결과 요약을 입력 관리</p></div><div class="toolbar"><button id="saveManage" class="pri">변경 저장</button></div></div>
     <div class="grid2">
       <div class="card"><div class="section"><h2>사업별 예산·결과 입력</h2><span>실집행액과 결과 요약 수정</span></div><div class="wrap"><table><thead><tr><th>사업명</th><th>계획예산</th><th>실집행액</th><th>차액</th><th>집행률</th><th>결과 요약</th></tr></thead><tbody id="manageRows"></tbody></table></div></div>
       <div class="card"><div class="section"><h2>예산 관제 요약</h2><span>예산 대비 실집행 기준</span></div><div id="manageSummary" class="note-list"></div></div>
@@ -122,7 +122,7 @@
   </section>
 
   <section id="flow" class="page">
-    <div class="top"><div><h1>결재·이력 관리</h1><p>사업별 다단계 결재, 문서번호, 활동 이력, 휴지통 복원을 통합 관리합니다.</p></div><div class="toolbar"><button id="saveFlowMeta" class="pri">결재 정보 저장</button></div></div>
+    <div class="top"><div><h1>결재·이력 관리</h1><p>사업별 다단계 결재, 문서번호, 활동 이력, 휴지통 복원을 통합 관리</p></div><div class="toolbar"><button id="saveFlowMeta" class="pri">결재 정보 저장</button></div></div>
     <div class="grid2">
       <div class="card"><div class="section"><h2>결재·문서 흐름 보드</h2><span>결재선 진행, 반려, 재개, 문서번호 관리</span></div><div class="wrap"><table><thead><tr><th>사업명</th><th>결재선</th><th>결재상태</th><th>결재기한</th><th>문서번호</th><th>우선/보안</th><th>작업</th></tr></thead><tbody id="flowRows"></tbody></table></div></div>
       <div class="card"><div class="section"><h2>결재 관제 요약</h2><span>미결재, 반려, 임박 건수</span></div><div id="flowSummary" class="note-list"></div></div>
@@ -134,7 +134,7 @@
   </section>
 
   <section id="ops" class="page">
-    <div class="top"><div><h1>운영센터</h1><p>권한 모드, 템플릿, 보안, 백업, 기본 설정을 통합 관리합니다.</p></div><div class="toolbar"><button id="saveOps" class="pri">운영 설정 저장</button></div></div>
+    <div class="top"><div><h1>운영센터</h1><p>권한 모드, 템플릿, 보안, 백업, 기본 설정을 통합 관리</p></div><div class="toolbar"><button id="saveOps" class="pri">운영 설정 저장</button></div></div>
     <div class="grid2">
       <div class="card">
         <div class="section"><h2>권한 모드 및 세션 운영</h2><span>역할 기반 메뉴·기능 제어</span></div>
