@@ -1,4 +1,4 @@
-/* 교육행정업무 통합 관리 시스템 v6.2.3 PWA - 공문/붙임 기본계획서 서식 */
+/* 교육행정업무 통합 관리 시스템 v6.2.4 PWA - 겉공문/붙임 파일 별도 생성 서식 */
 :root{--bg:#f4f7fb;--card:#fff;--line:#d9e2ec;--text:#1f2d3d;--muted:#66758b;--pri:#1f5fa8;--pri2:#123b72;--ok:#19784c;--warn:#b2730d;--bad:#b2382f;--soft:#eef4fb;--shadow:0 10px 28px rgba(15,23,42,.08)}
 *{box-sizing:border-box} html,body{margin:0;padding:0;font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif;color:var(--text);background:var(--bg)}
 button,input,select,textarea{font:inherit} button{cursor:pointer;border:1px solid transparent;border-radius:12px;padding:10px 14px} button:disabled{opacity:.55;cursor:not-allowed}
@@ -89,7 +89,7 @@ table{width:100%;border-collapse:collapse} th,td{border-bottom:1px solid #e8eef5
   #docPaper .doc-section{break-after:avoid;page-break-after:avoid}
 }
 
-/* === v6.2.3 붙임 기본계획서 구성: 표지 + 기본 목차형 계획서 === */
+/* === v6.2.4 붙임 계획서 구성: 표지 + 기본 목차형 계획서 === */
 .paper .doc-attachment .doc-cover{
   min-height:245mm;
   display:flex;

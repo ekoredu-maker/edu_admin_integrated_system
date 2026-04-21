@@ -1,11 +1,11 @@
-# 교육행정업무 통합 관리 시스템 v6.2 PWA
+# 교육행정업무 통합 관리 시스템 v6.2.4 PWA
 
 단일 HTML 시제품을 GitHub Pages 배포에 맞게 `index.html`, `css`, `js`, `assets`, `manifest`, `sw.js` 구조로 분리한 버전입니다.
 
 ## 폴더 구조
 
 ```text
-edu_admin_integrated_system_pwa_v6_2/
+edu_admin_integrated_system_pwa_v6_2_4_full/
 ├─ index.html
 ├─ manifest.webmanifest
 ├─ sw.js
@@ -16,10 +16,44 @@ edu_admin_integrated_system_pwa_v6_2/
 ├─ assets/
 │  ├─ logo.svg
 │  └─ icons/
+│     ├─ icon.svg
 │     ├─ icon-192.png
 │     └─ icon-512.png
 └─ .nojekyll
 ```
+
+## 초기 계정
+
+- ID: `admin`
+- PW: `1234`
+
+현재 로그인은 서버 인증이 아니라 로컬 화면 잠금 방식입니다. 실제 업무 운영용으로 개인정보·민감자료를 다루려면 서버 인증, 사용자별 권한, 암호화 저장 구조가 필요합니다.
+
+## v6.2.4 주요 변경
+
+- 문서 자동 생성에서 `겉공문`과 `붙임 파일`의 역할을 분리했습니다.
+- `겉공문 생성` 버튼은 케이에듀파인 본문에 붙여넣기 좋은 공문 본문을 생성합니다.
+- `붙임 계획서 생성` 버튼은 표지와 목차형 계획서를 갖춘 별도 첨부문서를 생성합니다.
+- `공문+붙임 각각 다운로드` 버튼으로 겉공문 RTF와 붙임 계획서 RTF를 연속 다운로드합니다.
+- 신규 사업 생성 화면에 붙임 계획서용 입력값을 추가했습니다.
+  - 추진 배경
+  - 실태 분석
+  - 세부 추진 내용
+  - 기대 효과
+- 붙임 계획서 구조를 다음 순서로 구성했습니다.
+  - 표지
+  - Ⅰ. 운영 근거
+  - Ⅱ. 추진 배경
+  - Ⅲ. 추진 목적
+  - Ⅳ. 실태 분석
+  - Ⅴ. 추진 방향
+  - Ⅵ. 추진 개요
+  - Ⅶ. 추진 체계
+  - Ⅷ. 세부 추진 계획
+  - Ⅸ. 예산 운영 계획
+  - Ⅹ. 기대 효과
+  - Ⅺ. 결재 및 붙임
+- Service Worker 캐시명을 `edu-admin-integrated-v6-2-4-attachment`로 변경했습니다.
 
 ## GitHub Pages 배포 방법
 
@@ -30,33 +64,6 @@ edu_admin_integrated_system_pwa_v6_2/
 5. Branch는 `main`, Folder는 `/root`를 선택하고 저장합니다.
 6. 생성된 GitHub Pages 주소로 접속합니다.
 
-## 초기 계정
-
-- ID: `admin`
-- PW: `edu2026!`
-
-현재 로그인은 서버 인증이 아니라 로컬 화면 잠금 방식입니다. 실제 업무 운영용으로 개인정보·민감자료를 다루려면 서버 인증, 사용자별 권한, 암호화 저장 구조가 필요합니다.
-
-## 이번 분리판에서 반영한 것
-
-- CSS를 `css/style.css`로 분리
-- JavaScript를 `js/app.js`로 분리
-- PWA용 `manifest.webmanifest` 추가
-- `sw.js` 서비스워커 추가
-- GitHub Pages용 상대경로 적용
-- 아이콘 및 로고 자산 추가
-- RTF 다운로드 함수 중복 선언 문제 정리
-- v5/v6/v6.1 혼재 문구를 v6.2 PWA 방향으로 정리
-
 ## 캐시 주의
 
 브라우저 캐시 때문에 이전 버전이 보이면 강력 새로고침을 하거나 개발자도구 Application 탭에서 기존 Service Worker와 Cache Storage를 삭제하세요.
-
-## v6.2.2 문서 서식 패치
-
-- 문서 템플릿에 `공문 본문(케이에듀파인용)`을 추가했습니다.
-- 기존 계획서/회의록/결과보고서는 `붙임 계획서`, `붙임 회의록`, `붙임 결과보고서`로 표시합니다.
-- CSS에서 케이에듀파인 본문형과 A4 첨부문서형을 분리했습니다.
-- 초기 로그인은 `admin / 1234`입니다.
-
-교체 파일: `index.html`, `js/app.js`, `css/style.css`, `sw.js`

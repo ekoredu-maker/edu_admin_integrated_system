@@ -1,4 +1,4 @@
-const CACHE_NAME = 'edu-admin-integrated-v6-2-3-planform';
+const CACHE_NAME = 'edu-admin-integrated-v6-2-4-attachment';
 const APP_SHELL = [
   './',
   './index.html',
