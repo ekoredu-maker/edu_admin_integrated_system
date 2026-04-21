@@ -5,7 +5,7 @@ const oldState=['eduAdminIntegratedSystem_v5','eduAdminIntegratedSystem_v4','edu
 const oldSettings=['eduAdminIntegratedSettings_v5','eduAdminIntegratedSettings_v4','eduAdminIntegratedSettings_v3'];
 const oldAuth=['eduAdminAuth_v5','eduAdminAuth_v4','eduAdminAuth_v3'];
 const roles={admin:{label:'ADMIN',pages:['*'],actions:['*']},writer:{label:'WRITER',pages:['dash','create','doc','manage','flow','ops'],actions:['saveProject','saveManage','saveFlow','copy','rtf','export','ops','delete','restore']},reviewer:{label:'REVIEWER',pages:['dash','doc','flow'],actions:['approve','reject','reset','copy','rtf']},viewer:{label:'VIEWER',pages:['dash','doc'],actions:['copy','rtf']}};
-const defaults={systemName:'교육행정업무 통합 관리 시스템',subtitle:'사업 계획 · 시달 · 예산 · 결과 · 문서출력을 한 화면 흐름으로 통합 관리',footerText:'Copyright 2026@박주가리교감 상시 고정 노출',defaultDepartment:'유초등교육팀',officerName:'박주가리교감',sealLine:'박주가리교감',loginId:'admin',loginPassword:'1234',inactivityMinutes:15,docPrefix:'유초등교육팀',defaultApprover:'교육장',sessionRole:'admin',enforcePermissions:true,defaultApprovalLine:'기안:담당자|검토:팀장|협조:과장|최종결재:교육장',templates:{planHeader:'위와 같이 사업 계획을 수립하여 추진하고자 합니다.',planFooter:'담당자는 관계 부서와 협의하여 일정과 예산을 준수해 추진한다.',minutesAgenda:'가. 추진 근거 공유\n나. 세부 운영 방안 협의\n다. 예산 및 역할 분담 검토\n라. 후속 일정 확정',resultFooter:'이상과 같이 사업 추진 결과를 보고합니다.'}};
+const defaults={systemName:'교육행정업무 통합 관리 시스템',subtitle:'사업 계획 · 시달 · 예산 · 결과 · 문서출력을 한 화면 흐름으로 통합 관리',footerText:'Copyright 2026@강창원',defaultDepartment:'유초등교육팀',officerName:'강창원',sealLine:'박주가리교감',loginId:'admin',loginPassword:'1234',inactivityMinutes:15,docPrefix:'유초등교육팀',defaultApprover:'교육장',sessionRole:'admin',enforcePermissions:true,defaultApprovalLine:'기안:담당자|검토:팀장|협조:과장|최종결재:교육장',templates:{planHeader:'위와 같이 사업 계획을 수립하여 추진하고자 합니다.',planFooter:'담당자는 관계 부서와 협의하여 일정과 예산을 준수해 추진한다.',minutesAgenda:'가. 추진 근거 공유\n나. 세부 운영 방안 협의\n다. 예산 및 역할 분담 검토\n라. 후속 일정 확정',resultFooter:'이상과 같이 사업 추진 결과를 보고합니다.'}};
 const statuses=['기획','시달','완료','보류'], priorities=['상','중','하'], securities=['일반','대내','비공개'];
 
 const dom={app:gid('app'),auth:gid('auth'),authErr:gid('authErr'),userChip:gid('userChip'),clockChip:gid('clockChip'),roleChip:gid('roleChip'),sysName:gid('sysName'),sysSub:gid('sysSub'),footText:gid('footText'),globalSearch:gid('globalSearch'),statusF:gid('statusF'),yearF:gid('yearF'),deptF:gid('deptF'),resultMeta:gid('resultMeta'),months:gid('months'),kpis:gid('kpis'),alerts:gid('alerts'),timeline:gid('timeline'),dashNotes:gid('dashNotes'),sched:gid('sched'),statusSummary:gid('statusSummary'),projectRows:gid('projectRows'),cloneSel:gid('cloneSel'),editSel:gid('editSel'),budgetRows:gid('budgetRows'),budgetTotal:gid('budgetTotal'),dProj:gid('dProj'),dTpl:gid('dTpl'),dTitle:gid('dTitle'),dDept:gid('dDept'),dOfficer:gid('dOfficer'),dRecv:gid('dRecv'),dOpen:gid('dOpen'),dDate:gid('dDate'),dNo:gid('dNo'),dAttach:gid('dAttach'),previewMeta:gid('previewMeta'),docPaper:gid('docPaper'),manageRows:gid('manageRows'),manageSummary:gid('manageSummary'),flowRows:gid('flowRows'),flowSummary:gid('flowSummary'),logRows:gid('logRows'),trashRows:gid('trashRows'),opsNotes:gid('opsNotes'),editBadge:gid('editBadge'),auditMeta:gid('auditMeta')};
@@ -61,7 +61,7 @@ function buildOfficialBodyBlocks(p,recv){
   const adminLines=orderedKorLines(p.adminItems,'대상 기관은 세부 일정에 따라 업무를 추진\n예산 집행 기준을 준수하고 증빙자료를 보관\n운영 후 결과 및 정산 자료를 기한 내 제출');
   return [
     {type:'paragraph',text:`1. 관련: ${basis}`},
-    {type:'paragraph',text:`2. ${p.title||'해당 사업'}을(를) 다음과 같이 추진하고자 하오니, 업무 추진에 협조하여 주시기 바랍니다.`},
+    {type:'paragraph',text:`2. ${p.title||'해당 사업'}을(를) 다음과 같이 추진하고자 합니다.`},
     {type:'list',items:[
       `가. 사업명: ${p.title||'-'}`,
       `나. 기간: ${periodText(p.startDate,p.endDate)}`,
@@ -92,7 +92,7 @@ function buildPlanAttachmentBlocks(p,docTitle,dept,officer,no,issueDate,infoRows
     [['추진 과제','세부 내용','시기','대상'],[`1. ${p.title||'주요 사업'} 운영`,p.purpose||'사업 목적에 따른 세부 프로그램 운영',periodText(p.startDate,p.endDate),p.target||'-'],['2. 운영 지원 및 협의',p.policy||'관계 부서 협의, 대상자 안내, 운영 자료 정비, 현장 지원',periodText(p.startDate,p.endDate),dept||'-'],['3. 결과 정리 및 환류','운영 결과, 예산 집행, 개선 의견을 정리하여 결과보고 및 차년도 계획에 반영','사업 종료 후','담당 부서']];
   const expectationItems=bulletLines(p.expectedEffects,'사업 목적 달성을 통한 대상자 성장 및 참여 기회 확대\n체계적인 운영 관리로 업무 누락 예방 및 담당자 업무 경감\n예산 집행과 결과 관리의 투명성 제고\n운영 결과 분석을 통한 차년도 사업 개선 및 정책 환류 강화');
   return [
-    {type:'cover',tagline:'더 깊고 더 넓은 지원으로 온전히 성장하는 아이들',title:docTitle,date:ymText(issueDate),dept:`[${dept||settings.defaultDepartment||'-'}]`},
+    {type:'cover',tagline:'의림지 천년의 숨결, 창의로 여는 제천교육',title:docTitle,date:ymText(issueDate),dept:`[${dept||settings.defaultDepartment||'-'}]`},
     {type:'title',text:docTitle},
     {type:'org',text:dept||settings.defaultDepartment||'-'},
     {type:'section',text:'Ⅰ. 운영 근거'},{type:'list',items:basisItems},
